@@ -52,21 +52,21 @@ Remaining factors were grouped into actionable categories such as "distraction",
 ## Visuals 
 Below are selected insights derived from the cleaned and processed NYC collision data.
 
-* **Vehicle Type vs. Crash Cause Interaction**
+* ####Vehicle Type vs. Crash Cause Interaction
 This heatmap visualizes the relationship between the types of vehicles involved and the primary contributing factors, color-coded by the average number of casualties per collision.
 
-![Urban System Risk Analysis](Visuals/comprehensive_risk_matrix_v2.jpg)
+![Urban System Risk Analysis](Visuals/comprehensive_risk_matrix_v2.png)
 
 **Insight:** This heatmap reveals that **two-wheeled vehicles** face the highest risk, with average casualties per collision reaching near-maximum levels (0.86 - 0.99) across all contributing factors, especially during **impairment-related** incidents.
 
-* **Vulnerability by Borough and User Type**
+* ####Vulnerability by Borough and User Type
 This chart highlights the distribution of total casualties (injured + killed) across NYC boroughs, segmented by the type of road user (pedestrians, cyclists, or motorists).
 
 ![Urban Vulnerability Analysis](Visuals/urban_vulnerability_distribution.png)
 
 **Insight:** **Brooklyn** and **Queens** exhibit the highest volume of total casualties; notably, Brooklyn leads in motorist injuries, while Manhattan shows a high concentration of pedestrian and cyclist casualties relative to its size.
 
-* **High-Risk Hours Across Boroughs**
+* ####High-Risk Hours Across Boroughs
 A temporal heatmap identifying the "danger hours" within each borough, showing peak times for collision risks throughout the day (00:00 - 23:00).
 
 ![Urban Risk Analysis: Danger Hours](Visuals/crash_density_heatmap_optimized.png)
