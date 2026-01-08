@@ -29,7 +29,7 @@ Extensive data preprocessing was conducted to ensure data quality, reduce noise,
 
 * **Focusing on 1-2 Vehicle Crashes:** The scope was narrowed to incidents involving only one or two vehicles. Rows where vehicle/factor information existed for a 3rd, 4th, or 5th vehicle were dropped. Subsequently, columns related to vehicles 3, 4, and 5 were removed entirely from the dataset.
 
-* **Dimensionality Reduction (Feature Dropping):** High-cardinality location features considered unnecessary for this specific analysis were dropped to reduce noise. These included ZIP CODE, LATITUDE, LONGITUDE, LOCATION, and all street name columns (ON STREET NAME, CROSS STREET NAME, OFF STREET NAME).
+* **Dimensionality Reduction:** High-cardinality location features considered unnecessary for this specific analysis were dropped to reduce noise. These included ZIP CODE, LATITUDE, LONGITUDE, LOCATION, and all street name columns (ON STREET NAME, CROSS STREET NAME, OFF STREET NAME).
 
 * **Preserving Single-Vehicle Incidents:** A targeted null handling strategy was applied. While most remaining system nulls were cleared, missing values in VEHICLE TYPE CODE 2 and CONTRIBUTING FACTOR VEHICLE 2 were explicitly filled with "Not Applicable". This ensured that single-vehicle crashes were not lost during data cleaning.
 
