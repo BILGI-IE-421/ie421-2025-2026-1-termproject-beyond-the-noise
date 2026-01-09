@@ -118,7 +118,20 @@ The confusion matrix below corresponds to the selected operating threshold.
 The model correctly identifies a large portion of casualty cases; however, this comes at the cost of a very high number of false positives. As a result, the model tends to over-predict the casualty class, reducing its usefulness for decision-making at the individual collision level.
 
 ---
+### Point-wise Classification Metrics
 
+For completeness, standard classification metrics were also computed at the selected operating threshold. These values are reported to provide numerical context, but they should be interpreted together with the curve-based analyses presented above.
+
+- **Accuracy:** ~0.51  
+- **Precision (Casualty):** ~0.41  
+- **Recall (Casualty):** ~0.79  
+- **F1-score (Casualty):** ~0.54  
+- **ROC-AUC:** ~0.65  
+
+The relatively high recall indicates that the model captures a large portion of casualty cases; however, this comes at the cost of low precision, meaning that many non-casualty crashes are incorrectly classified as casualty events. Consequently, the F1-score remains moderate and does not correspond to a stable or practically useful operating point.
+
+These numerical results are consistent with the confusion matrix and curve-based analyses, reinforcing the conclusion that the model does not provide reliable individual-level predictions.
+---
 ### Summary
 
 Overall, the evaluation demonstrates that although certain patterns exist in the data, they are not strong enough to support accurate and reliable predictive modeling. Threshold tuning and class reweighting do not resolve this limitation.
