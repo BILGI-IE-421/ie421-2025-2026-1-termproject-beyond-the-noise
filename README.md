@@ -73,3 +73,30 @@ A temporal heatmap identifying the "danger hours" within each borough, showing p
 
 **Insight:** The relative risk peak is synchronized across all boroughs, identifying the window between **14:00 and 19:00 (Rush Hour)** as the most dangerous period for commuters in New York City.
 
+## Predictive Performance Evaluation and Justification
+
+The following results demonstrate why the collision casualty problem does not support reliable individual-level prediction with the available features, and why the analysis is reframed as descriptive rather than predictive.
+
+### Threshold Sensitivity Analysis
+
+The threshold sensitivity analysis shows that the F1-score remains nearly constant across a wide range of decision thresholds. Adjusting the threshold mainly shifts the trade-off between precision and recall without producing a clear optimal operating point. This indicates that the model fails to learn a stable decision boundary and that performance limitations are not caused by poor threshold selection.
+
+### ROC Curve Analysis
+
+The ROC curve yields an AUC of approximately 0.65, indicating only moderate separability between casualty and non-casualty cases. While the model performs slightly better than random ranking, this level of discrimination is insufficient for reliable individual-level prediction or decision support.
+
+### Precision–Recall Analysis
+
+The precision–recall analysis reveals a strong trade-off between sensitivity and precision for the casualty class. Increasing recall leads to a rapid decrease in precision, while improving precision results in a substantial loss of recall. No balanced region exists where both metrics achieve acceptable values simultaneously.
+
+### Confusion Matrix Interpretation
+
+The confusion matrix shows that although a large portion of actual casualty cases are identified, this comes at the cost of a high number of false positive predictions. The model therefore tends to over-predict casualty occurrence, which severely limits its practical usability as a predictive system.
+
+### Classification Metrics Summary
+
+Overall classification metrics confirm these observations: recall for the casualty class is relatively high, while precision remains low. This imbalance indicates that the model captures some explanatory patterns but lacks the specificity required for robust prediction.
+
+### Conclusion
+
+Taken together, these findings show that while the data contains explanatory signals related to casualty risk, these signals are insufficient for accurate individual-level prediction. Consequently, the problem is more appropriately addressed using descriptive and explanatory analysis rather than predictive modeling.
