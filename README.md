@@ -119,7 +119,7 @@ The model correctly identifies a large portion of casualty cases; however, this 
 
 ---
 
-### Summary and Methodological Implication
+### Summary
 
 Overall, the evaluation demonstrates that although certain patterns exist in the data, they are not strong enough to support accurate and reliable predictive modeling. Threshold tuning and class reweighting do not resolve this limitation.
 
