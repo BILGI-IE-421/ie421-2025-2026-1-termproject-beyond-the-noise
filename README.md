@@ -129,8 +129,8 @@ For completeness, standard classification metrics were also computed at the sele
 - **ROC-AUC:** ~0.65  
 
 The relatively high recall indicates that the model captures a large portion of casualty cases; however, this comes at the cost of low precision, meaning that many non-casualty crashes are incorrectly classified as casualty events. Consequently, the F1-score remains moderate and does not correspond to a stable or practically useful operating point.
-
 These numerical results are consistent with the confusion matrix and curve-based analyses, reinforcing the conclusion that the model does not provide reliable individual-level predictions.
+
 ---
 ### Summary
 
