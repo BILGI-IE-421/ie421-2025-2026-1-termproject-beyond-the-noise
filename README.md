@@ -73,30 +73,55 @@ A temporal heatmap identifying the "danger hours" within each borough, showing p
 
 **Insight:** The relative risk peak is synchronized across all boroughs, identifying the window between **14:00 and 19:00 (Rush Hour)** as the most dangerous period for commuters in New York City.
 
-## Predictive Performance Evaluation and Justification
+## Predictive Model Evaluation and Limitations
 
-The following results demonstrate why the collision casualty problem does not support reliable individual-level prediction with the available features, and why the analysis is reframed as descriptive rather than predictive.
+This section evaluates the performance of the predictive model developed to estimate whether a traffic collision results in at least one casualty. Although the model incorporates extensive feature engineering and threshold optimization, the results indicate structural limitations that prevent reliable individual-level prediction.
+
+---
 
 ### Threshold Sensitivity Analysis
 
-The threshold sensitivity analysis shows that the F1-score remains nearly constant across a wide range of decision thresholds. Adjusting the threshold mainly shifts the trade-off between precision and recall without producing a clear optimal operating point. This indicates that the model fails to learn a stable decision boundary and that performance limitations are not caused by poor threshold selection.
+The figure below illustrates how precision, recall, and F1-score change as the classification threshold varies.
+
+![Threshold Sensitivity](Predictive_Model_Visuals/threshold_sensitivity.png)
+
+The F1-score remains relatively flat across a wide range of thresholds. This behavior indicates that the model does not learn a sharp decision boundary. Adjusting the threshold merely trades precision for recall without producing a meaningful improvement in overall performance.
+
+---
 
 ### ROC Curve Analysis
 
-The ROC curve yields an AUC of approximately 0.65, indicating only moderate separability between casualty and non-casualty cases. While the model performs slightly better than random ranking, this level of discrimination is insufficient for reliable individual-level prediction or decision support.
+The ROC curve summarizes the model’s ranking capability across all possible thresholds.
 
-### Precision–Recall Analysis
+![ROC Curve](Predictive_Model_Visuals/roc_curve.png)
 
-The precision–recall analysis reveals a strong trade-off between sensitivity and precision for the casualty class. Increasing recall leads to a rapid decrease in precision, while improving precision results in a substantial loss of recall. No balanced region exists where both metrics achieve acceptable values simultaneously.
+The Area Under the Curve (AUC ≈ 0.65) suggests limited discriminative power. While the model performs better than random guessing, the separation between casualty and non-casualty cases is weak for practical prediction purposes.
 
-### Confusion Matrix Interpretation
+---
 
-The confusion matrix shows that although a large portion of actual casualty cases are identified, this comes at the cost of a high number of false positive predictions. The model therefore tends to over-predict casualty occurrence, which severely limits its practical usability as a predictive system.
+### Precision–Recall Curve
 
-### Classification Metrics Summary
+Given class imbalance, the precision–recall curve provides a more informative view of performance on the casualty class.
 
-Overall classification metrics confirm these observations: recall for the casualty class is relatively high, while precision remains low. This imbalance indicates that the model captures some explanatory patterns but lacks the specificity required for robust prediction.
+![Precision Recall Curve](Predictive_Model_Visuals/precision_recall_curve.png)
 
-### Conclusion
+As recall increases, precision declines rapidly. This indicates that capturing a higher proportion of casualty cases leads to a substantial increase in false positives. There is no operating point where both precision and recall are simultaneously high.
 
-Taken together, these findings show that while the data contains explanatory signals related to casualty risk, these signals are insufficient for accurate individual-level prediction. Consequently, the problem is more appropriately addressed using descriptive and explanatory analysis rather than predictive modeling.
+---
+
+### Confusion Matrix
+
+The confusion matrix below corresponds to the selected operating threshold.
+
+![Confusion Matrix](Predictive_Model_Visuals/confusion_matrix.png)
+
+The model correctly identifies a large portion of casualty cases; however, this comes at the cost of a very high number of false positives. As a result, the model tends to over-predict the casualty class, reducing its usefulness for decision-making at the individual collision level.
+
+---
+
+### Summary and Methodological Implication
+
+Overall, the evaluation demonstrates that although certain patterns exist in the data, they are not strong enough to support accurate and reliable predictive modeling. Threshold tuning and class reweighting do not resolve this limitation.
+
+Consequently, this problem is better approached from a **descriptive and explanatory perspective**, focusing on understanding and interpreting the factors associated with injury occurrence rather than attempting individual-level outcome prediction.
+d to casualty risk, these signals are insufficient for accurate individual-level prediction. Consequently, the problem is more appropriately addressed using descriptive and explanatory analysis rather than predictive modeling.
