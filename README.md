@@ -47,9 +47,7 @@ Similar to vehicle types, over 80 diverse contributing factors were analyzed. No
 
 * **Temporal Filtering:** The dataset, originally dating back to 2012, was filtered to focus on the most recent trends between 2021 and 2025.
 
-## Model
-
-## Visuals 
+## Visuals for Preprocessing
 Below are selected insights derived from the cleaned and processed NYC collision data.
 
 * #### Vehicle Type vs. Crash Cause Interaction
@@ -73,68 +71,41 @@ A temporal heatmap identifying the "danger hours" within each borough, showing p
 
 **Insight:** The relative risk peak is synchronized across all boroughs, identifying the window between **14:00 and 19:00 (Rush Hour)** as the most dangerous period for commuters in New York City.
 
-## Predictive Model Evaluation and Limitations
+## Insights from the Data
 
-This section evaluates the performance of the predictive model developed to estimate whether a traffic collision results in at least one casualty. Although the model incorporates extensive feature engineering and threshold optimization, the results indicate structural limitations that prevent reliable individual-level prediction.
+In this project, we implemented a Logistic Regression model to predict the probability of a casualty in NYC vehicle collisions. Beyond prediction, we utilized the model for descriptive analysis to identify the key risk factors that characterize high-risk accidents.
 
----
+The coefficients (Odds Ratios) derived from our Logistic Regression model reveal not only where traffic accidents occur on New York streets but also the specific conditions under which they become fatal or result in injuries (casualty). Here is the story our data tells:
 
-### Threshold Sensitivity Analysis
+* **The Greatest Risk** The most striking finding of our analysis is the massive disparity between vehicle types. Our model shows that when the second vehicle involved in an accident is "Two Wheeled" (Motorcycle or Bicycle), the risk of injury or death is approximately 30 times higher compared to reference values. This data scientifically proves that urban safety policies must prioritize protecting vulnerable road users—through measures such as dedicated bike lanes and helmet inspections—to save lives.
 
-The figure below illustrates how precision, recall, and F1-score change as the classification threshold varies.
+* **The Danger of Single-Vehicle and Uncertain Accidents** When examining contributing factors, we observed that "Not Applicable" cases (where no second vehicle is actively involved or the factor is not listed) increase the risk ratio by more than 4 times. This suggests that single-side accidents, such as hitting a pedestrian or a fixed object, often result in much more severe consequences. Additionally, the high risk associated with "Unknown" types for the primary vehicle highlights the gravity of hit-and-run or unregistered accidents.
 
-![Threshold Sensitivity](Predictive_Model_Visuals/threshold_sensitivity.png)
+* **The Effect of Time** Contrary to urban myths, Weekends or the Hour of Day do not cause as radical a change in injury risk as vehicle types do. The fact that these Odds Ratios stay very close to the 1.0 threshold proves that risk is not strictly time-bound; the primary determinant is not "when" the accident happens, but "which vehicles" are involved and the nature of the collision.
 
-The F1-score remains relatively flat across a wide range of thresholds. This behavior indicates that the model does not learn a sharp decision boundary. Adjusting the threshold merely trades precision for recall without producing a meaningful improvement in overall performance.
+* **Strategic Insight Instead** of focusing solely on reducing general traffic congestion, this project demonstrates that life-saving results can be achieved by implementing pinpoint inspections and infrastructure improvements targeting high-risk vehicle groups (motorcycles/bicycles) and critical accident types.
 
----
+![Factors Associated with Casualty Occurrence (Logistic Regression)](Visuals/Descriptive_model_factors.png)
 
-### ROC Curve Analysis
+## Data Dictionary & Encoding
 
-The ROC curve summarizes the model’s ranking capability across all possible thresholds.
+* Contributing Factors Mapping                              
+| 0 | Distraction |
+| 1 | Environmental |
+| 2 | Human Error |
+| 3 | Impairment |
+| 4 | Not Applicable (Vehicle 2 only) |
+| 5 | Unsafe Driving |
+| 6 | Unspecified |
+| 7 | Vehicle Defect |
 
-![ROC Curve](Predictive_Model_Visuals/roc_curve.png)
-
-The Area Under the Curve (AUC ≈ 0.65) suggests limited discriminative power. While the model performs better than random guessing, the separation between casualty and non-casualty cases is weak for practical prediction purposes.
-
----
-
-### Precision–Recall Curve
-
-Given class imbalance, the precision–recall curve provides a more informative view of performance on the casualty class.
-
-![Precision Recall Curve](Predictive_Model_Visuals/precision_recall_curve.png)
-
-As recall increases, precision declines rapidly. This indicates that capturing a higher proportion of casualty cases leads to a substantial increase in false positives. There is no operating point where both precision and recall are simultaneously high.
-
----
-
-### Confusion Matrix
-
-The confusion matrix below corresponds to the selected operating threshold.
-
-![Confusion Matrix](Predictive_Model_Visuals/confusion_matrix.png)
-
-The model correctly identifies a large portion of casualty cases; however, this comes at the cost of a very high number of false positives. As a result, the model tends to over-predict the casualty class, reducing its usefulness for decision-making at the individual collision level.
-
----
-### Point-wise Classification Metrics
-
-For completeness, standard classification metrics were also computed at the selected operating threshold. These values are reported to provide numerical context, but they should be interpreted together with the curve-based analyses presented above.
-
-- **Accuracy:** ~0.51  
-- **Precision (Casualty):** ~0.41  
-- **Recall (Casualty):** ~0.79  
-- **F1-score (Casualty):** ~0.54  
-- **ROC-AUC:** ~0.65  
-
-The relatively high recall indicates that the model captures a large portion of casualty cases; however, this comes at the cost of low precision, meaning that many non-casualty crashes are incorrectly classified as casualty events. Consequently, the F1-score remains moderate and does not correspond to a stable or practically useful operating point.
-These numerical results are consistent with the confusion matrix and curve-based analyses, reinforcing the conclusion that the model does not provide reliable individual-level predictions.
-
----
-### Summary
-
-Overall, the evaluation demonstrates that although certain patterns exist in the data, they are not strong enough to support accurate and reliable predictive modeling. Threshold tuning and class reweighting do not resolve this limitation.
-
-Consequently, this problem is better approached from a **descriptive and explanatory perspective**, focusing on understanding and interpreting the factors associated with injury occurrence rather than attempting individual-level outcome prediction.
-d to casualty risk, these signals are insufficient for accurate individual-level prediction. Consequently, the problem is more appropriately addressed using descriptive and explanatory analysis rather than predictive modeling.
+* Vehicle Type Mapping
+| 0 | Not Applicable (Vehicle 2 only) |
+| 1 | Other |
+| 2 | Passenger Car |
+| 3 | Public Service/Taxi |
+| 4 | SUV/Wagon |
+| 5 | Truck/Commercial |
+| 6 | Two Wheeled |
+| 7 | Unknown |
+| 8 | Van |
