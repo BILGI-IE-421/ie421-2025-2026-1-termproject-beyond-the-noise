@@ -89,7 +89,7 @@ The coefficients (Odds Ratios) derived from our Logistic Regression model reveal
 
 * **Data Encoding Reference**
 
-| Contributing Factors Mapping | | Vehicle Type Mapping  |
+| Contributing Factor Code | Label | | Vehicle Type Code | Label |
 | :--- | :--- | :---: | :--- | :--- |
 | **0** | Distraction | | **0** | Not Applicable (V2 only) |
 | **1** | Environmental | | **1** | Other |
