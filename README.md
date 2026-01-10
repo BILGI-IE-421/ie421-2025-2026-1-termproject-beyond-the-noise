@@ -87,18 +87,18 @@ The coefficients (Odds Ratios) derived from our Logistic Regression model reveal
 
 ![Factors Associated with Casualty Occurrence (Logistic Regression)](Visuals/Descriptive_model_factors.png)
 
-* **Data Encoding Reference**
+* **Data Dictionary**
 
-| Contributing Factor Code | Label | | Vehicle Type Code | Label |
+> **Note:** To improve model stability, only the top 6 most frequent categories were kept. All other categories were grouped under the **"other"** label.
+
+| Factor Code | Contributing Factor (Top 6) | | Vehicle Code | Vehicle Type (Top 6) |
 | :--- | :--- | :---: | :--- | :--- |
-| **0** | Distraction | | **0** | Not Applicable (V2 only) |
-| **1** | Environmental | | **1** | Other |
-| **2** | Human Error | | **2** | Passenger Car |
-| **3** | Impairment | | **3** | Public Service/Taxi |
-| **4** | Not Applicable (V2 only) | | **4** | SUV/Wagon |
-| **5** | Unsafe Driving | | **5** | Truck/Commercial |
-| **6** | Unspecified | | **6** | Two Wheeled |
-| **7** | Vehicle Defect | | **7** | Unknown |
-| | | | **8** | Van |
+| **5** | Unsafe Driving | | **2** | Passenger Car |
+| **6** | Unspecified | | **4** | SUV/Wagon |
+| **0** | Distraction | | **3** | Public Service/Taxi |
+| **2** | Human Error | | **5** | Truck/Commercial |
+| **7** | Vehicle Defect | | **6** | Two Wheeled |
+| **3** | Impairment | | **8** | Van |
+| **-** | **Other**  | | **-** | **Other**  |
 
 
