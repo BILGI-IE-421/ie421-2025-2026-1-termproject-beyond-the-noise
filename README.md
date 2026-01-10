@@ -122,6 +122,18 @@ The coefficients (Odds Ratios) derived from our Logistic Regression model reveal
 </td>
   </tr>
 </table>
+### Data Encoding Reference
 
+| Contributing Factor Code | Label | | Vehicle Type Code | Label |
+| :--- | :--- | :---: | :--- | :--- |
+| **0** | Distraction | | **0** | Not Applicable (V2 only) |
+| **1** | Environmental | | **1** | Other |
+| **2** | Human Error | | **2** | Passenger Car |
+| **3** | Impairment | | **3** | Public Service/Taxi |
+| **4** | Not Applicable (V2 only) | | **4** | SUV/Wagon |
+| **5** | Unsafe Driving | | **5** | Truck/Commercial |
+| **6** | Unspecified | | **6** | Two Wheeled |
+| **7** | Vehicle Defect | | **7** | Unknown |
+| | | | **8** | Van |
 
 
