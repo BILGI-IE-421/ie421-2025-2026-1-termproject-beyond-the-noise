@@ -83,7 +83,7 @@ The coefficients (Odds Ratios) derived from our Logistic Regression model reveal
 
 * **The Effect of Time** Contrary to urban myths, Weekends or the Hour of Day do not cause as radical a change in injury risk as vehicle types do. The fact that these Odds Ratios stay very close to the 1.0 threshold proves that risk is not strictly time-bound; the primary determinant is not "when" the accident happens, but "which vehicles" are involved and the nature of the collision.
 
-* **Strategic Insight Instead** of focusing solely on reducing general traffic congestion, this project demonstrates that life-saving results can be achieved by implementing pinpoint inspections and infrastructure improvements targeting high-risk vehicle groups (motorcycles/bicycles) and critical accident types.
+* **Strategic Insight** Instead of focusing solely on reducing general traffic congestion, this project demonstrates that life-saving results can be achieved by implementing pinpoint inspections and infrastructure improvements targeting high-risk vehicle groups (motorcycles/bicycles) and critical accident types.
 
 ![Factors Associated with Casualty Occurrence (Logistic Regression)](Visuals/Descriptive_model_factors.png)
 
