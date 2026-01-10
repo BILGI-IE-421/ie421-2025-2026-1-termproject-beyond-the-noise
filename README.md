@@ -87,16 +87,21 @@ The coefficients (Odds Ratios) derived from our Logistic Regression model reveal
 
 ![Factors Associated with Casualty Occurrence (Logistic Regression)](Visuals/Descriptive_model_factors.png)
 
-## Data Dictionary & Encoding
-
 * Contributing Factors Mapping                              
 | 0 | Distraction |
+
 | 1 | Environmental |
+
 | 2 | Human Error |
+
 | 3 | Impairment |
+
 | 4 | Not Applicable (Vehicle 2 only) |
+
 | 5 | Unsafe Driving |
+
 | 6 | Unspecified |
+
 | 7 | Vehicle Defect |
 
 * Vehicle Type Mapping
