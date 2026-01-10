@@ -89,42 +89,7 @@ The coefficients (Odds Ratios) derived from our Logistic Regression model reveal
 
 * **Data Encoding Reference**
 
-<table style="width: 100%; border-collapse: collapse;">
-  <tr>
-    <th width="50%">1. Contributing Factors Mapping</th>
-    <th width="50%">2. Vehicle Type Mapping</th>
-  </tr>
-  <tr>
-    <td valign="top">
-
-| 0 | Distraction |
-| 1 | Environmental |
-| 2 | Human Error |
-| 3 | Impairment |
-| 4 | Not Applicable (Vehicle type 2 only) |
-| 5 | Unsafe Driving |
-| 6 | Unspecified |
-| 7 | Vehicle Defect |
-
-</td>
-<td valign="top">
-
-| 0 | Not Applicable (Vehicle type 2 only) |
-| 1 | Other |
-| 2 | Passenger Car |
-| 3 | Public Service/Taxi |
-| 4 | SUV/Wagon |
-| 5 | Truck/Commercial |
-| 6 | Two Wheeled |
-| 7 | Unknown |
-| 8 | Van |
-
-</td>
-  </tr>
-</table>
-### Data Encoding Reference
-
-| Contributing Factor Code | Label | | Vehicle Type Code | Label |
+| Contributing Factors Mapping | | Vehicle Type Mapping  |
 | :--- | :--- | :---: | :--- | :--- |
 | **0** | Distraction | | **0** | Not Applicable (V2 only) |
 | **1** | Environmental | | **1** | Other |
