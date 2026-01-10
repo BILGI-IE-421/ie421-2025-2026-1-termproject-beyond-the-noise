@@ -89,16 +89,17 @@ The coefficients (Odds Ratios) derived from our Logistic Regression model reveal
 
 * **Data Dictionary**
 
-> **Note:** To improve model stability, only the top 6 most frequent categories were kept. All other categories were grouped under the **"other"** label.
-
-| Factor Code | Contributing Factor (Top 6) | | Vehicle Code | Vehicle Type (Top 6) |
+| Code | Contributing Factor (Causes) | | Code | Vehicle Type |
 | :--- | :--- | :---: | :--- | :--- |
-| **5** | Unsafe Driving | | **2** | Passenger Car |
-| **6** | Unspecified | | **4** | SUV/Wagon |
-| **0** | Distraction | | **3** | Public Service/Taxi |
-| **2** | Human Error | | **5** | Truck/Commercial |
-| **7** | Vehicle Defect | | **6** | Two Wheeled |
-| **3** | Impairment | | **8** | Van |
-| **-** | **Other**  | | **-** | **Other**  |
+| **0** | Distraction | | **2** | Passenger Car |
+| **1** | Environmental (Other*) | | **4** | SUV/Wagon |
+| **2** | Human Error | | **3** | Public Service/Taxi |
+| **3** | Impairment | | **5** | Truck/Commercial |
+| **4** | **Not Applicable (Single Vehicle)** | | **6** | Two Wheeled |
+| **5** | Unsafe Driving | | **8** | Van |
+| **6** | Unspecified | | **0** | Not Applicable (Single Vehicle) |
+| **7** | Vehicle Defect | | **-** | **Other** (Rare types grouped) |
+
+*\*Environmental factors and rare vehicle types were grouped under 'Other' in the final regression model to ensure statistical significance.*
 
 
