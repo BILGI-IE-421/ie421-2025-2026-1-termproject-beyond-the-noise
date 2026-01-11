@@ -1,11 +1,12 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 import statsmodels.formula.api as smf
 
 # =========================
-# LOAD DATA
+# LOAD MERGED DATA
 # =========================
-DATA_PATH = "nyc_vehicle_collisions.csv"
+DATA_PATH = "nyc_vehicle_collisions_merged2.csv"
 df = pd.read_csv(DATA_PATH)
 
 # =========================
@@ -38,18 +39,6 @@ df = df.dropna(subset=[
 ])
 
 # =========================
-# OPTIONAL: TOP-K REDUCTION
-# =========================
-def topk(series, k=6):
-    top = series.value_counts().nlargest(k).index
-    return series.where(series.isin(top), "other")
-
-df["vehicle_type_code1"] = topk(df["vehicle_type_code1"], 6)
-df["vehicle_type_code2"] = topk(df["vehicle_type_code2"], 6)
-df["contributing_factor_vehicle_1"] = topk(df["contributing_factor_vehicle_1"], 6)
-df["contributing_factor_vehicle_2"] = topk(df["contributing_factor_vehicle_2"], 6)
-
-# =========================
 # LOGISTIC REGRESSION (DESCRIPTIVE)
 # =========================
 formula = """
@@ -63,27 +52,82 @@ C(contributing_factor_vehicle_1) +
 C(contributing_factor_vehicle_2)
 """
 
-model = smf.logit(formula=formula, data=df).fit()
-
-print("\n=== LOGISTIC MODEL SUMMARY ===")
-print(model.summary())
+model = smf.logit(formula=formula, data=df).fit(disp=False)
 
 # =========================
-# ODDS RATIOS + WALD STATS
+# ODDS RATIOS
 # =========================
 params = model.params
-conf = model.conf_int()
-conf.columns = ["CI_low", "CI_high"]
-
 or_table = pd.DataFrame({
-    "Coefficient": params,
-    "Odds_Ratio": np.exp(params),
-    "CI_low": np.exp(conf["CI_low"]),
-    "CI_high": np.exp(conf["CI_high"]),
+    "odds_ratio": np.exp(params),
     "p_value": model.pvalues
-}).sort_values("Odds_Ratio", ascending=False)
+})
 
-print("\n=== ODDS RATIOS (DESCRIPTIVE) ===")
-print(or_table.round(4))
+or_table = or_table.drop("Intercept")
 
-or_table.round(6).to_csv("rq3_logistic_odds_ratios.csv")
+# =========================
+# CLEAN LABELS
+# =========================
+def clean_label(x):
+    x = x.replace("C(", "").replace(")", "").replace("[T.", ": ").replace("]", "")
+    x = x.replace("vehicle_type_code1:", "")
+    x = x.replace("vehicle_type_code2:", "")
+    x = x.replace("contributing_factor_vehicle_1:", "")
+    x = x.replace("contributing_factor_vehicle_2:", "")
+    return x.strip().title()
+
+or_table["label"] = or_table.index.map(clean_label)
+
+# =========================
+# VEHICLE TYPE (MERGED)
+# =========================
+veh = or_table.loc[or_table.index.str.contains("vehicle_type")]
+veh = veh.groupby("label")["odds_ratio"].max().sort_values(ascending=True)
+
+# =========================
+# CONTRIBUTING FACTORS
+# =========================
+fact = or_table.loc[or_table.index.str.contains("contributing_factor")]
+fact = fact.groupby("label")["odds_ratio"].max().sort_values(ascending=True)
+
+# =========================
+# TIME EFFECTS
+# =========================
+time = or_table.loc[or_table.index.isin(["hour", "is_weekend"])]
+time.index = ["Hour of Day", "Weekend"]
+time = time["odds_ratio"]
+
+# =========================
+# PLOT
+# =========================
+fig, axes = plt.subplots(1, 3, figsize=(16, 6))
+
+# --- Vehicle Type (log scale) ---
+axes[0].barh(veh.index, veh.values)
+axes[0].axvline(1, linestyle="--")
+axes[0].set_xscale("log")
+axes[0].set_title("Vehicle Type (log scale)")
+axes[0].set_xlabel("Odds Ratio")
+
+# --- Contributing Factors ---
+axes[1].barh(fact.index, fact.values)
+axes[1].axvline(1, linestyle="--")
+axes[1].set_title("Contributing Factors")
+axes[1].set_xlabel("Odds Ratio")
+
+# --- Time Effects ---
+axes[2].barh(time.index, time.values)
+axes[2].axvline(1, linestyle="--")
+axes[2].set_title("Time Effects")
+axes[2].set_xlabel("Odds Ratio")
+
+fig.suptitle(
+    "Factors Associated with Casualty Occurrence (Descriptive Logistic Regression)",
+    fontsize=14
+)
+
+plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+plt.savefig("rq3_descriptive_logistic_final.png", dpi=300)
+plt.close()
+
+print("Saved: rq3_descriptive_logistic_final.png")
