@@ -36,12 +36,12 @@ Extensive data preprocessing was conducted to ensure data quality, reduce noise,
 * **Feature Engineering - Vehicle Type Standardization:**
 The raw vehicle type data contained high noise (typos, redundant categories). Analysis showed the top 20 vehicle types covered 97% of the data.
 
-&nbsp;These top types were consolidated into broader categories (e.g., grouping "bike", "motorcycle", "bicycle" into "two wheeled"). Rare or irrelevant types outside this consolidated list were removed.
+These top types were consolidated into broader categories (e.g., grouping "bike", "motorcycle", "bicycle" into "two wheeled"). Rare or irrelevant types outside this consolidated list were removed.
 
 * **Feature Engineering - Contributing Factor Standardization:**
 Similar to vehicle types, over 80 diverse contributing factors were analyzed. Nonsensical values were removed.
 
- &nbsp;Remaining factors were grouped into actionable categories such as "distraction", "unsafe driving", "impairment", and "vehicle defect".
+Remaining factors were grouped into actionable categories such as "distraction", "unsafe driving", "impairment", and "vehicle defect".
 
 * **Categorical Encoding:** The newly standardized vehicle type and contributing factor columns underwent categorical encoding to prepare them for analysis.
 
@@ -73,9 +73,9 @@ A temporal heatmap identifying the "danger hours" within each borough, showing p
 
 ## Insights from the Data
 
-&nbsp;In this project, we implemented a Logistic Regression model to predict the probability of a casualty in NYC vehicle collisions. Beyond prediction, we utilized the model for descriptive analysis to identify the key risk factors that characterize high-risk accidents.
+&emsp;In this project, we implemented a Logistic Regression model to predict the probability of a casualty in NYC vehicle collisions. Beyond prediction, we utilized the model for descriptive analysis to identify the key risk factors that characterize high-risk accidents.
 
-&nbsp;The findings from our logistic regression analysis reveal the critical factors determining the risk of injury and death (casualty) in New York City traffic accidents from a professional perspective:
+&emsp;The findings from our logistic regression analysis reveal the critical factors determining the risk of injury and death (casualty) in New York City traffic accidents from a professional perspective:
 
 * **The Greatest Risk** The most striking finding of our analysis is the massive disparity in risk between different vehicle types. Our model demonstrates that when a "Two-Wheeled" vehicle (Motorcycle or Bicycle) is involved in an accident, the risk of injury or death is approximately 30 times higher compared to reference values. This data scientifically proves that urban safety policies must prioritize the protection of "vulnerable road users"; measures such as dedicated bike lanes and stringent helmet inspections will have a direct, life-saving impact.
 
@@ -89,9 +89,9 @@ A temporal heatmap identifying the "danger hours" within each borough, showing p
 
 ## Model Outputs
 
-&nbsp;Based on the model performance metrics, the logistic regression model exhibits a "sensitive yet cautious" profile in identifying high-risk cases (Casualty). The model demonstrates a safety-oriented success by identifying 79% of actual injury-related accidents (Recall: 0.79), thereby minimizing the probability of overlooking potential injury risks (false negatives).
+&emsp;Based on the model performance metrics, the logistic regression model exhibits a "sensitive yet cautious" profile in identifying high-risk cases (Casualty). The model demonstrates a safety-oriented success by identifying 79% of actual injury-related accidents (Recall: 0.79), thereby minimizing the probability of overlooking potential injury risks (false negatives).
 
-&nbsp;However, this high sensitivity comes at the cost of low precision (0.41), meaning the model frequently classifies non-casualty accidents as "risky," resulting in a high rate of "false alarms." The low overall accuracy (0.51) indicates that the inherent variability in traffic accidents is exceptionally high and that the model struggles to achieve flawless predictions using only basic features such as vehicle type and time. Ultimately, the model functions as a strategic early warning system that prioritizes capturing high-risk cases even at the expense of lower overall precision.
+&emsp;However, this high sensitivity comes at the cost of low precision (0.41), meaning the model frequently classifies non-casualty accidents as "risky," resulting in a high rate of "false alarms." The low overall accuracy (0.51) indicates that the inherent variability in traffic accidents is exceptionally high and that the model struggles to achieve flawless predictions using only basic features such as vehicle type and time. Ultimately, the model functions as a strategic early warning system that prioritizes capturing high-risk cases even at the expense of lower overall precision.
 
 ### Model Metrics Table
 
