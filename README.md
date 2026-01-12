@@ -36,12 +36,12 @@ Extensive data preprocessing was conducted to ensure data quality, reduce noise,
 * **Feature Engineering - Vehicle Type Standardization:**
 The raw vehicle type data contained high noise (typos, redundant categories). Analysis showed the top 20 vehicle types covered 97% of the data.
 
-  These top types were consolidated into broader categories (e.g., grouping "bike", "motorcycle", "bicycle" into "two wheeled"). Rare or irrelevant types outside this consolidated list were removed.
+&nbsp;These top types were consolidated into broader categories (e.g., grouping "bike", "motorcycle", "bicycle" into "two wheeled"). Rare or irrelevant types outside this consolidated list were removed.
 
 * **Feature Engineering - Contributing Factor Standardization:**
 Similar to vehicle types, over 80 diverse contributing factors were analyzed. Nonsensical values were removed.
 
-  Remaining factors were grouped into actionable categories such as "distraction", "unsafe driving", "impairment", and "vehicle defect".
+ &nbsp;Remaining factors were grouped into actionable categories such as "distraction", "unsafe driving", "impairment", and "vehicle defect".
 
 * **Categorical Encoding:** The newly standardized vehicle type and contributing factor columns underwent categorical encoding to prepare them for analysis.
 
@@ -50,21 +50,21 @@ Similar to vehicle types, over 80 diverse contributing factors were analyzed. No
 ## Visuals for Preprocessing
 Below are selected insights derived from the cleaned and processed NYC collision data.
 
-* #### Vehicle Type vs. Crash Cause Interaction
+* ### Vehicle Type vs. Crash Cause Interaction
 This heatmap visualizes the relationship between the types of vehicles involved and the primary contributing factors, color-coded by the average number of casualties per collision.
 
 ![Urban System Risk Analysis](Visuals/comprehensive_risk_matrix_v2.png)
 
 **Insight:** This heatmap reveals that **two-wheeled vehicles** face the highest risk, with average casualties per collision reaching near-maximum levels (0.86 - 0.99) across all contributing factors, especially during **impairment-related** incidents.
 
-* #### Vulnerability by Borough and User Type
+* ### Vulnerability by Borough and User Type
 This chart highlights the distribution of total casualties (injured + killed) across NYC boroughs, segmented by the type of road user (pedestrians, cyclists, or motorists).
 
 ![Urban Vulnerability Analysis](Visuals/urban_vulnerability_distribution.png)
 
 **Insight:** **Brooklyn** and **Queens** exhibit the highest volume of total casualties; notably, Brooklyn leads in motorist injuries, while Manhattan shows a high concentration of pedestrian and cyclist casualties relative to its size.
 
-* #### High-Risk Hours Across Boroughs
+* ### High-Risk Hours Across Boroughs
 A temporal heatmap identifying the "danger hours" within each borough, showing peak times for collision risks throughout the day (00:00 - 23:00).
 
 ![Urban Risk Analysis: Danger Hours](Visuals/crash_density_heatmap_optimized.png)
@@ -73,9 +73,9 @@ A temporal heatmap identifying the "danger hours" within each borough, showing p
 
 ## Insights from the Data
 
-In this project, we implemented a Logistic Regression model to predict the probability of a casualty in NYC vehicle collisions. Beyond prediction, we utilized the model for descriptive analysis to identify the key risk factors that characterize high-risk accidents.
+&nbsp;In this project, we implemented a Logistic Regression model to predict the probability of a casualty in NYC vehicle collisions. Beyond prediction, we utilized the model for descriptive analysis to identify the key risk factors that characterize high-risk accidents.
 
-The findings from our logistic regression analysis reveal the critical factors determining the risk of injury and death (casualty) in New York City traffic accidents from a professional perspective:
+&nbsp;The findings from our logistic regression analysis reveal the critical factors determining the risk of injury and death (casualty) in New York City traffic accidents from a professional perspective:
 
 * **The Greatest Risk** The most striking finding of our analysis is the massive disparity in risk between different vehicle types. Our model demonstrates that when a "Two-Wheeled" vehicle (Motorcycle or Bicycle) is involved in an accident, the risk of injury or death is approximately 30 times higher compared to reference values. This data scientifically proves that urban safety policies must prioritize the protection of "vulnerable road users"; measures such as dedicated bike lanes and stringent helmet inspections will have a direct, life-saving impact.
 
@@ -89,9 +89,9 @@ The findings from our logistic regression analysis reveal the critical factors d
 
 ## Model Outputs
 
-  Based on the model performance metrics, the logistic regression model exhibits a "sensitive yet cautious" profile in identifying high-risk cases (Casualty). The model demonstrates a safety-oriented success by identifying 79% of actual injury-related accidents (Recall: 0.79), thereby minimizing the probability of overlooking potential injury risks (false negatives).
+&nbsp;Based on the model performance metrics, the logistic regression model exhibits a "sensitive yet cautious" profile in identifying high-risk cases (Casualty). The model demonstrates a safety-oriented success by identifying 79% of actual injury-related accidents (Recall: 0.79), thereby minimizing the probability of overlooking potential injury risks (false negatives).
 
-  However, this high sensitivity comes at the cost of low precision (0.41), meaning the model frequently classifies non-casualty accidents as "risky," resulting in a high rate of "false alarms." The low overall accuracy (0.51) indicates that the inherent variability in traffic accidents is exceptionally high and that the model struggles to achieve flawless predictions using only basic features such as vehicle type and time. Ultimately, the model functions as a strategic early warning system that prioritizes capturing high-risk cases even at the expense of lower overall precision.
+&nbsp;However, this high sensitivity comes at the cost of low precision (0.41), meaning the model frequently classifies non-casualty accidents as "risky," resulting in a high rate of "false alarms." The low overall accuracy (0.51) indicates that the inherent variability in traffic accidents is exceptionally high and that the model struggles to achieve flawless predictions using only basic features such as vehicle type and time. Ultimately, the model functions as a strategic early warning system that prioritizes capturing high-risk cases even at the expense of lower overall precision.
 
 ### Model Metrics Table
 
@@ -100,8 +100,8 @@ The findings from our logistic regression analysis reveal the critical factors d
 | **No Casualty** | 0.76 | 0.36 | 0.49 | 33,745 |
 | **Casualty** | 0.41 | 0.79 | 0.54 | 18,797 |
 | **Accuracy** | | | **0.51** | **52,542** |
-| *Macro Avg* | 0.58 | 0.58 | 0.51 | 52,542 |
-| *Weighted Avg* | 0.63 | 0.51 | 0.50 | 52,542 | 
+| **Macro Avg.** | 0.58 | 0.58 | 0.51 | 52,542 |
+| **Weighted Avg** | 0.63 | 0.51 | 0.50 | 52,542 | 
 
 ## Project Website Link
 
