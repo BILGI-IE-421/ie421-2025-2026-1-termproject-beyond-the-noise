@@ -89,9 +89,9 @@ The findings from our logistic regression analysis reveal the critical factors d
 
 ## Model Outputs
 
-Based on the model performance metrics, the logistic regression model exhibits a "sensitive yet cautious" profile in identifying high-risk cases (Casualty). The model demonstrates a safety-oriented success by identifying 79% of actual injury-related accidents (Recall: 0.79), thereby minimizing the probability of overlooking potential injury risks (false negatives).
+  Based on the model performance metrics, the logistic regression model exhibits a "sensitive yet cautious" profile in identifying high-risk cases (Casualty). The model demonstrates a safety-oriented success by identifying 79% of actual injury-related accidents (Recall: 0.79), thereby minimizing the probability of overlooking potential injury risks (false negatives).
 
-However, this high sensitivity comes at the cost of low precision (0.41), meaning the model frequently classifies non-casualty accidents as "risky," resulting in a high rate of "false alarms." The low overall accuracy (0.51) indicates that the inherent variability in traffic accidents is exceptionally high and that the model struggles to achieve flawless predictions using only basic features such as vehicle type and time. Ultimately, the model functions as a strategic early warning system that prioritizes capturing high-risk cases even at the expense of lower overall precision.
+  However, this high sensitivity comes at the cost of low precision (0.41), meaning the model frequently classifies non-casualty accidents as "risky," resulting in a high rate of "false alarms." The low overall accuracy (0.51) indicates that the inherent variability in traffic accidents is exceptionally high and that the model struggles to achieve flawless predictions using only basic features such as vehicle type and time. Ultimately, the model functions as a strategic early warning system that prioritizes capturing high-risk cases even at the expense of lower overall precision.
 
 ### Model Metrics Table
 
