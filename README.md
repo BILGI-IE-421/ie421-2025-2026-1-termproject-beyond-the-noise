@@ -75,32 +75,33 @@ A temporal heatmap identifying the "danger hours" within each borough, showing p
 
 In this project, we implemented a Logistic Regression model to predict the probability of a casualty in NYC vehicle collisions. Beyond prediction, we utilized the model for descriptive analysis to identify the key risk factors that characterize high-risk accidents.
 
-The coefficients (Odds Ratios) derived from our Logistic Regression model reveal not only where traffic accidents occur on New York streets but also the specific conditions under which they become fatal or result in injuries (casualty). Here is the story our data tells:
+The findings from our logistic regression analysis reveal the critical factors determining the risk of injury and death (casualty) in New York City traffic accidents from a professional perspective:
 
-* **The Greatest Risk** The most striking finding of our analysis is the massive disparity between vehicle types. Our model shows that when the second vehicle involved in an accident is "Two Wheeled" (Motorcycle or Bicycle), the risk of injury or death is approximately 30 times higher compared to reference values. This data scientifically proves that urban safety policies must prioritize protecting vulnerable road users—through measures such as dedicated bike lanes and helmet inspections—to save lives.
+* **The Greatest Risk** The most striking finding of our analysis is the massive disparity in risk between different vehicle types. Our model demonstrates that when a "Two-Wheeled" vehicle (Motorcycle or Bicycle) is involved in an accident, the risk of injury or death is approximately 30 times higher compared to reference values. This data scientifically proves that urban safety policies must prioritize the protection of "vulnerable road users"; measures such as dedicated bike lanes and stringent helmet inspections will have a direct, life-saving impact.
 
-* **The Danger of Single-Vehicle and Uncertain Accidents** When examining contributing factors, we observed that "Not Applicable" cases (where no second vehicle is actively involved or the factor is not listed) increase the risk ratio by more than 4 times. This suggests that single-side accidents, such as hitting a pedestrian or a fixed object, often result in much more severe consequences. Additionally, the high risk associated with "Unknown" types for the primary vehicle highlights the gravity of hit-and-run or unregistered accidents.
+* **The Danger of Single-Vehicle and Uncertain Accidents** When examining contributing factors, it was observed that cases in the "Not Applicable" category (where a second vehicle is not actively involved or the factor is not specifically listed) increase the risk ratio by more than 4 times. This indicates that single-vehicle accidents, such as hitting a fixed object or a pedestrian, often result in much more severe consequences. Additionally, the high risk associated with "Unknown" primary vehicle types underscores the gravity of hit-and-run incidents or the involvement of unregistered vehicles in high-severity collisions.
 
-* **The Effect of Time** Contrary to urban myths, Weekends or the Hour of Day do not cause as radical a change in injury risk as vehicle types do. The fact that these Odds Ratios stay very close to the 1.0 threshold proves that risk is not strictly time-bound; the primary determinant is not "when" the accident happens, but "which vehicles" are involved and the nature of the collision.
+* **The Effect of Time** Contrary to common urban myths, variables such as "Weekend" or "Hour of Day" do not exert as radical an influence on injury risk as vehicle type does. The fact that the Odds Ratio values for these variables remain very close to the 1.0 threshold proves that casualty risk is not strictly time-bound. The primary determinant is not "when" the accident occurs, but rather "which vehicles" are involved and the specific nature of the collision kinetics.
 
-* **Strategic Insight** Instead of focusing solely on reducing general traffic congestion, this project demonstrates that life-saving results can be achieved by implementing pinpoint inspections and infrastructure improvements targeting high-risk vehicle groups (motorcycles/bicycles) and critical accident types.
+* **Strategic Insight** This project demonstrates that instead of focusing solely on reducing general traffic congestion, much more effective results can be achieved through pinpoint inspections and infrastructure improvements targeting high-risk vehicle groups (motorcycles/bicycles) and critical accident scenarios. For city planners and policymakers, the fundamental priority should be the minimization of high-kinetic collision scenarios rather than merely managing total vehicle volume.
 
 ![Factors Associated with Casualty Occurrence (Logistic Regression)](Visuals/Descriptive_model_factors.png)
 
-* **Data Dictionary**
+## Model Outputs
 
-| Code | Contributing Factor (Causes) | | Code | Vehicle Type |
-| :--- | :--- | :---: | :--- | :--- |
-| **0** | Distraction | | **0** | Not Applicable (Single Vehicle) |
-| **1** | Environmental (Other*) | | **1** |  **Other** (Rare types grouped)  |
-| **2** | Human Error | | **2** | Passenger Car |
-| **3** | Impairment | | **3** | Public Service/Taxi |
-| **4** | **Not Applicable (Single Vehicle)** | | **4** | SUV/Wagon |
-| **5** | Unsafe Driving | | **5** | Truck/Commercial |
-| **6** | Unspecified | | **6** | Two Wheeled |
-| **7** | Vehicle Defect | | **7** | Unknown |
-| | | | **8** | Van |
+Based on the model performance metrics, the logistic regression model exhibits a "sensitive yet cautious" profile in identifying high-risk cases (Casualty). The model demonstrates a safety-oriented success by identifying 79% of actual injury-related accidents (Recall: 0.79), thereby minimizing the probability of overlooking potential injury risks (false negatives).
 
-*\*Environmental factors and rare vehicle types were grouped under 'Other' in the final regression model to ensure statistical significance.*
+However, this high sensitivity comes at the cost of low precision (0.41), meaning the model frequently classifies non-casualty accidents as "risky," resulting in a high rate of "false alarms." The low overall accuracy (0.51) indicates that the inherent variability in traffic accidents is exceptionally high and that the model struggles to achieve flawless predictions using only basic features such as vehicle type and time. Ultimately, the model functions as a strategic early warning system that prioritizes capturing high-risk cases even at the expense of lower overall precision.
+
+### Model Metrics Table
+
+| Class | Precision | Recall | F1-Score | Support |
+| :--- | :---: | :---: | :---: | :---: |
+| **No Casualty** | 0.76 | 0.36 | 0.49 | 33,745 |
+| **Casualty** | 0.41 | 0.79 | 0.54 | 18,797 |
+| **Accuracy** | | | **0.51** | **52,542** |
+| *Macro Avg* | 0.58 | 0.58 | 0.51 | 52,542 |
+| *Weighted Avg* | 0.63 | 0.51 | 0.50 | [cite_start]52,542 | [cite: 1, 2]
+
 
 
