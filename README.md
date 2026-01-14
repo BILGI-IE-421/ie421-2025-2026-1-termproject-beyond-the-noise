@@ -87,21 +87,6 @@ A temporal heatmap identifying the "danger hours" within each borough, showing p
 
 ![Factors Associated with Casualty Occurrence (Logistic Regression)](Visuals/Descriptive_model_factors.png)
 
-## Model Outputs
-
-&emsp;Based on the model performance metrics, the logistic regression model exhibits a "sensitive yet cautious" profile in identifying high-risk cases (Casualty). The model demonstrates a safety-oriented success by identifying 79% of actual injury-related accidents (Recall: 0.79), thereby minimizing the probability of overlooking potential injury risks (false negatives).
-
-&emsp;However, this high sensitivity comes at the cost of low precision (0.41), meaning the model frequently classifies non-casualty accidents as "risky," resulting in a high rate of "false alarms." The low overall accuracy (0.51) indicates that the inherent variability in traffic accidents is exceptionally high and that the model struggles to achieve flawless predictions using only basic features such as vehicle type and time. Ultimately, the model functions as a strategic early warning system that prioritizes capturing high-risk cases even at the expense of lower overall precision.
-
-### Model Metrics Table
-
-| Class | Precision | Recall | F1-Score | Support |
-| :--- | :---: | :---: | :---: | :---: |
-| **No Casualty** | 0.76 | 0.36 | 0.49 | 33,745 |
-| **Casualty** | 0.41 | 0.79 | 0.54 | 18,797 |
-| **Accuracy** | | | **0.51** | **52,542** |
-| **Macro Avg.** | 0.58 | 0.58 | 0.51 | 52,542 |
-| **Weighted Avg** | 0.63 | 0.51 | 0.50 | 52,542 | 
 
 ## Project Website Link
 
