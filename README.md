@@ -18,7 +18,7 @@
   &emsp;***NYU Collision Interactive Map:*** This interactive map geographically visualizes traffic collision data across the five main boroughs of New York City from 2021 to 2025, providing detailed data for each borough such as the total number of collisions, injury statistics, and highest-risk hours.<br>
 * Scripts: Holds the source code for data preprocessing and descriptive model.
 * index.html: Serves as the main webpage for GitHub Pages to host the project's interactive findings and summary.
-* requirements.txt: Lists the necessary Python libraries and dependencies required to execute the data preprocessing and analysis scripts successfully.
+* requirements.txt: Lists the necessary Python libraries and dependencies required to execute the data preprocessing and analysis scripts successfully. Open a terminal or command prompt in the project folder, install the required libraries by running: pip install --no-cache-dir -r requirements.txt
 
 
 ### Hosting
