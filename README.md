@@ -16,7 +16,7 @@
   &emsp;***Urban Vulnerability Analysis:*** This graph illustrates the distribution of road user casualties (injured and killed) by road user type across the five boroughs of New York.<br>
   &emsp;***Factors Associated with Casualty Occurence:*** This graph analyzes the factors influencing the probability of a traffic accident resulting in a casualty based on Odds Ratios.<br>
   &emsp;***NYU Collision Interactive Map:*** This interactive map geographically visualizes traffic collision data across the five main boroughs of New York City from 2021 to 2025, providing detailed data for each borough such as the total number of collisions, injury statistics, and highest-risk hours.<br>
-* Codes: Holds the source code for data preprocessing and descriptive model.
+* Scripts: Holds the source code for data preprocessing and descriptive model.
 * index.html: Serves as the main webpage for GitHub Pages to host the project's interactive findings and summary.
 
 
