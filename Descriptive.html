@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descriptive Analysis - NYC Crash Analytics</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .bg-gradient-header {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        /* Style for the embedded map container */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: #f3f4f6;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <nav class="bg-gray-900 text-white py-4 shadow-xl border-b border-yellow-500 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="font-bold text-xl tracking-tight">
+                <span class="text-yellow-500">NYC</span> Crash Analytics
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
+                <a href="index.html" class="hover:text-yellow-500 transition">Home</a>
+                <a href="descriptive.html" class="text-yellow-500 border-b-2 border-yellow-500 pb-1">Descriptive Visualizations</a>
+                <a href="predictive.html" class="hover:text-yellow-500 transition">Predictive Visualizations</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-gradient-header text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter">Descriptive <span class="text-yellow-500">Visualizations</span></h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-lg">Detailed statistical analysis of NYC motor vehicle collisions, focusing on temporal, spatial, and causal factors.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16 space-y-20">
+
+        <section class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 card-hover">
+            <div class="p-8 md:p-12">
+                <div class="mb-10 text-center">
+                    <h2 class="text-2xl font-bold text-gray-800">Geographic Total Collision Heatmap</h2>
+                </div>
+                
+                <div class="map-container mb-10 border border-gray-200"> 
+                    <iframe src="Images/nyc_collision_interactive_map.html" class="w-full h-full border-none"></iframe>
+                </div>
+
+                <div class="max-w-4xl mx-auto text-gray-600 leading-relaxed text-sm text-center">
+                    <p>
+                        When examining the safety panorama of New York City's vast transportation network, it becomes clear that accidents are not uniformly distributed; instead, they cluster within specific corridors and neighborhoods. This interactive map visualizes these clusters through a geographic lens, offering initial insights for urban safety strategies. The peak in activity, particularly during rush hours, highlights the direct link between traffic volume and collision risk across the five boroughs.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 card-hover">
+            <div class="grid md:grid-cols-12">
+                <div class="md:col-span-5 p-8 md:p-12 flex flex-col justify-center order-2 md:order-1">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Vehicle & Factor Risk Matrix</h2>
+                    <div class="space-y-4 text-gray-600 leading-relaxed text-sm">
+                        <p>Identifying the location of an accident is only the first step; the true objective is to evaluate the severity of the risks involved. This matrix correlates the probability of an incident with its potential physical and social impact. By categorizing street events into a structured framework, it enables the differentiation between frequent, low-impact collisions and the high-priority 'red alert' zones that demand immediate intervention due to their devastating consequences.</p>
+                    </div>
+                </div>
+                <div class="md:col-span-7 p-4 bg-gray-50 flex items-center justify-center order-1 md:order-2">
+                    <img src="Images/comprehensive_risk_matrix_v2.png" alt="Risk Matrix Analysis" class="w-full h-auto rounded-lg">
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 card-hover">
+            <div class="p-8 md:p-12">
+                <div class="mb-10 text-center">
+                    <span class="text-yellow-600 font-bold text-xs uppercase tracking-widest mb-2">Analysis 2</span>
+                    <h2 class="text-2xl font-bold text-gray-800">Urban Vulnerability Distribution</h2>
+                </div>
+                <div class="mb-10 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                    <img src="Images/urban_vulnerability_distribution.png" alt="Casualties by Borough" class="w-full max-w-5xl mx-auto h-auto">
+                </div>
+                <div class="max-w-4xl mx-auto text-gray-600 leading-relaxed text-sm text-center">
+                    <p>
+                        The most vital phase of this analysis centers on urban fragility. This distribution curve illustrates the varying degrees of vulnerability across different city sectors to traffic-related hazards. The peaks represent the most sensitive areas of New York, where residents face the highest exposure to danger. This visualization serves as a roadmap for building a more resilient city by pinpointing the specific 'weak links' where safety improvements are most urgently needed.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 card-hover">
+            <div class="p-8 md:p-12">
+                <div class="mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">
+        <section class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 card-hover">
+            <div class="p-8 md:p-12 text-center">
+                <div class="mb-10 flex flex-col items-center justify-center">
+                    <h2 class="text-3xl font-bold">
+<section class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 card-hover">
+            <div class="p-8 md:p-12 text-center">
+                <div class="mb-10 flex flex-col items-center justify-center">
+                    <h2 class="text-3xl font-medium text-yellow-600 mb-4">
+                        Conclusion
+                    </h2>
+                    <div class="h-1 w-20 bg-yellow-500 rounded mt-4"></div>
+                </div>
+
+                <div class="max-w-4xl mx-auto text-gray-700 leading-relaxed space-y-6 text-lg font-normal">
+                    <p>
+                        Our journey through New York City’s traffic data reveals a truth beyond mere numbers: urban safety is a multidimensional structure where geographic density, collision severity, and social vulnerability intersect. While our maps identify 'where' to look, the risk matrix dictates the 'priority' of intervention, and the urban vulnerability analysis clarifies 'for whom' these strategies must be designed.
+                    </p>
+                    <p>
+                        The insights gained are not just a record of the past but a roadmap for a safer New York. This data-driven approach ensures that infrastructure improvements, traffic enforcement, and public awareness campaigns are channeled where they are needed most. Our ultimate goal is to transform these analyses into concrete policies, making the streets safer and more livable for every individual in the city.
+                    </p>
+                </div>
+            </div>
+        </section>
