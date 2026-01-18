@@ -23,7 +23,7 @@
 
 ### Hosting
 Website Link: https://bilgi-ie-421.github.io/ie421-2025-2026-1-termproject-beyond-the-noise/ <br>
-Website Repository: https://github.com/belinaykeles/beyond-the-noise_Website
+Website Repository: https://github.com/BILGI-IE-421/ie421-2025-2026-1-termproject-beyond-the-noise
 
 
 
