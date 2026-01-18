@@ -19,8 +19,8 @@
 * scripts/: Holds the source code for data preprocessing and descriptive model.
 * index.html: Serves as the main webpage for GitHub Pages to host the project's interactive findings and summary.
 
-*Website GitHub Repository -> https://github.com/iremmural/beyond-the-noise_Website.git
-*Website link ->  https://iremmural.github.io/beyond-the-noise_Website/
+Website GitHub Repository -> https://github.com/iremmural/beyond-the-noise_Website.git
+Website link ->  https://iremmural.github.io/beyond-the-noise_Website/
 
 ### Hosting
 
