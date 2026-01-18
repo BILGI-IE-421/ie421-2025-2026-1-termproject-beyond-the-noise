@@ -1,0 +1,47 @@
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+}
+
+
+.text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0,0,0,0.8),
+                 0 2px 4px rgba(0,0,0,0.6);
+}
+
+
+.bg-gradient-header {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: #f3f4f6;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+
+@media (max-width: 768px) {
+    .map-container {
+        height: 400px;
+    }
+}
