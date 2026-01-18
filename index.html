@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYC Traffic Safety Analysis</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+        }
+        .text-shadow-lg {
+            text-shadow: 0 4px 8px rgba(0,0,0,0.8),
+                         0 2px 4px rgba(0,0,0,0.6);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans leading-normal tracking-normal">
+
+<!-- NAVBAR -->
+<nav class="bg-gray-900 text-white py-4 shadow-xl sticky top-0 z-50 border-b border-yellow-500">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="font-bold text-xl tracking-tight">
+            <span class="text-yellow-500">NYC</span> Crash Analytics
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
+            <a href="index.html" class="text-yellow-500 border-b-2 border-yellow-500 pb-1">Home</a>
+            <a href="story.html" class="hover:text-yellow-500 transition">Story</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="relative h-screen flex items-center justify-center text-white overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1555109307-f7d9da25c244?q=80&w=2073&auto=format&fit=crop"
+         class="absolute inset-0 w-full h-full object-cover"
+         alt="NYC Skyline">
+
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-gray-900"></div>
+
+    <div class="relative z-10 text-center px-4 max-w-6xl mt-[-5vh]">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-6 animate-fade-in tracking-tighter uppercase text-shadow-lg">
+            Motor Vehicle Collisions in <span class="text-yellow-500">New York City</span>
+        </h1>
+
+        <p class="text-lg md:text-2xl font-medium text-gray-200 max-w-4xl mx-auto animate-fade-in text-shadow-lg"
+           style="animation-delay: 0.3s;">
+            A data-driven story of space, interaction, and vulnerability
+        </p>
+    </div>
+</header>
+
+<!-- MAIN -->
+<main class="container mx-auto px-4 py-20">
+
+    <!-- RESEARCH QUESTIONS -->
+    <section class="mb-32">
+        <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center border-b-2 border-yellow-500 w-max mx-auto pb-2 uppercase">
+            Research Focus
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-yellow-500">
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Where do traffic collisions concentrate across New York City?
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-yellow-500">
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Under which conditions do collisions more frequently result in casualties?
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-yellow-500">
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Which road users are most exposed to traffic-related harm?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY BUTTON -->
+    <section class="flex justify-center">
+        <a href="story.html"
+           class="bg-yellow-500 text-gray-900 px-16 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 transition">
+            Enter the Story
+        </a>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-12 mt-20 border-t border-gray-800">
+    <div class="container mx-auto px-4 text-center">
+        <p class="text-yellow-500 font-bold mb-2 uppercase tracking-widest">Data Science Project</p>
+        <p class="text-gray-400 text-sm mb-6">NYC Motor Vehicle Collisions | IE 421</p>
+        <div class="text-gray-500 text-xs">
+            © 2026
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
