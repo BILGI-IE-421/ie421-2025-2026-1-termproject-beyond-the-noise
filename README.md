@@ -24,9 +24,6 @@
 ### Hosting
 
 
-Website GitHub Repository -> https://github.com/iremmural/beyond-the-noise_Website.git <br>
-Website link ->  https://bilgi-ie-421.github.io/ie421-2025-2026-1-termproject-beyond-the-noise/
-
 
 
 
