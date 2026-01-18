@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story - NYC Crash Analytics</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        .bg-gradient-header {
+            background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+                        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: #f3f4f6;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans text-gray-900">
+
+<!-- NAVBAR -->
+<nav class="bg-gray-900 text-white py-4 shadow-xl border-b border-yellow-500 sticky top-0 z-50">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="font-bold text-xl tracking-tight">
+            <span class="text-yellow-500">NYC</span> Crash Analytics
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
+            <a href="index.html" class="hover:text-yellow-500 transition">Home</a>
+            <a href="story.html" class="text-yellow-500 border-b-2 border-yellow-500 pb-1">Story</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<header class="bg-gradient-header text-white py-16">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tighter">
+            The <span class="text-yellow-500">Story</span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg">
+            How space, interaction, and vulnerability shape traffic risk in New York City.
+        </p>
+    </div>
+</header>
+
+<!-- MAIN -->
+<main class="container mx-auto px-4 py-16 space-y-20">
+
+    <!-- 1. HEATMAP -->
+    <section class="bg-white rounded-3xl shadow-xl border border-gray-100 card-hover">
+        <div class="p-8 md:p-12 text-center">
+            <h2 class="text-2xl font-bold mb-8">Geographic Total Collision Heatmap</h2>
+
+            <div class="map-container mb-10 border border-gray-200">
+                <iframe src="Images/nyc_collision_interactive_map.html"
+                        class="w-full h-full border-none"></iframe>
+            </div>
+
+            <p class="max-w-4xl mx-auto text-gray-600 text-sm leading-relaxed">
+                Thousands of traffic collisions are recorded across New York City every year.
+                When these incidents are placed back onto the map, they stop appearing random.
+                Some areas consistently absorb more crashes than others, reflecting how movement,
+                density, and urban structure concentrate risk.
+            </p>
+        </div>
+    </section>
+
+    <!-- 2. RISK MATRIX -->
+    <section class="bg-white rounded-3xl shadow-xl border border-gray-100 card-hover">
+        <div class="grid md:grid-cols-12">
+            <div class="md:col-span-5 p-8 md:p-12 flex flex-col justify-center">
+                <h2 class="text-2xl font-bold mb-4">Vehicle & Factor Risk Matrix</h2>
+
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Collision concentration alone does not explain why some incidents result in injuries
+                    while others do not.
+                    <br><br>
+                    By examining vehicle types together with reported contributing factors,
+                    this matrix highlights combinations that repeatedly align with higher casualty involvement.
+                    Each cell summarizes an average risk pattern drawn from historical data,
+                    allowing structural signals to emerge from routine traffic noise.
+                </p>
+            </div>
+
+            <div class="md:col-span-7 p-4 bg-gray-50 flex items-center justify-center">
+                <img src="Images/comprehensive_risk_matrix_v2.png"
+                     alt="Vehicle and Factor Risk Matrix"
+                     class="w-full h-auto rounded-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. VULNERABILITY -->
+    <section class="bg-white rounded-3xl shadow-xl border border-gray-100 card-hover">
+        <div class="p-8 md:p-12 text-center">
+            <h2 class="text-2xl font-bold mb-8">Urban Vulnerability Distribution</h2>
+
+            <div class="mb-10 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                <img src="Images/urban_vulnerability_distribution.png"
+                     alt="Urban Vulnerability Distribution"
+                     class="w-full max-w-5xl mx-auto h-auto">
+            </div>
+
+            <p class="max-w-4xl mx-auto text-gray-600 text-sm leading-relaxed">
+                Risk is not experienced equally by all road users.
+                A collision that leaves a motorist unharmed can be life-altering for a pedestrian or cyclist.
+                This view shifts the focus from vehicles to people,
+                revealing how casualty burden is unevenly distributed across road-user groups and boroughs.
+            </p>
+        </div>
+    </section>
+
+    <!-- 4. FACTOR ASSOCIATION -->
+    <section class="bg-white rounded-3xl shadow-xl border border-gray-100 card-hover">
+        <div class="grid md:grid-cols-12">
+            <div class="md:col-span-7 p-4 bg-gray-50 flex items-center justify-center">
+                <img src="Images/Descriptive_model_factors.png"
+                     alt="Factor Association Overview"
+                     class="w-full h-auto rounded-lg shadow-sm">
+            </div>
+
+            <div class="md:col-span-5 p-8 md:p-12 flex flex-col justify-center">
+                <h2 class="text-2xl font-bold mb-4">Factor Association Overview</h2>
+
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    To further contextualize these patterns, key variables are summarized through
+                    relative association measures.
+                    <br><br>
+                    Odds ratios provide a comparative view of how selected factors align with
+                    changes in casualty likelihood within the observed data,
+                    complementing the earlier spatial and distributional analyses.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONCLUSION -->
+    <section class="bg-white rounded-3xl shadow-xl border border-gray-100 card-hover">
+        <div class="p-8 md:p-12 text-center">
+            <h2 class="text-3xl font-medium text-yellow-600 mb-6">Conclusion</h2>
+            <div class="h-1 w-20 bg-yellow-500 rounded mx-auto mb-8"></div>
+
+            <p class="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed">
+                Seen together, these views tell a connected story.
+                Traffic risk in New York City does not arise from isolated events,
+                but from the interaction between where movement concentrates,
+                how situations unfold, and who remains most exposed.
+                <br><br>
+                By tracing these patterns across space, conditions, and road users,
+                the analysis moves beyond individual incidents toward a clearer
+                understanding of how urban traffic risk takes shape.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+    <div class="container mx-auto px-4 text-center">
+        <p class="text-gray-400 text-sm">IE 421 – Data Science Project</p>
+        <p class="text-gray-500 text-xs mt-4">© 2026 NYC Crash Analytics</p>
+    </div>
+</footer>
+
+</body>
+</html>
