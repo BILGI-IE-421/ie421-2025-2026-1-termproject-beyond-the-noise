@@ -11,7 +11,7 @@
 
 ### Files
 * Dataset: Contains preprocessed NYC Motor Vehicle Collisions datasets used throughout the analysis.
-* Visuals: Includes generated figures such as the descriptive logistic regression charts and the interactive Leaflet collision map.<br>
+* Images: Includes generated figures such as the descriptive logistic regression charts and the interactive Leaflet collision map.<br>
   &emsp;***Interaction of Vehicle Types and Crash Causes:*** This graph illustrates the average risk of casualties per collision resulting from the interaction between different vehicle types and contributing factors such as distraction, environmental conditions, and impairment.<br>
   &emsp;***Urban Vulnerability Analysis:*** This graph illustrates the distribution of road user casualties (injured and killed) by road user type across the five boroughs of New York.<br>
   &emsp;***Factors Associated with Casualty Occurence:*** This graph analyzes the factors influencing the probability of a traffic accident resulting in a casualty based on Odds Ratios.<br>
