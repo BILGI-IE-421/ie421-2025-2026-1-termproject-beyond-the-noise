@@ -23,6 +23,7 @@
 
 ### Hosting
 Website Link: https://belinaykeles.github.io/beyond-the-noise_Website/
+https://bilgi-ie-421.github.io/ie421-2025-2026-1-termproject-beyond-the-noise/
 
 
 
